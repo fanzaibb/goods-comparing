@@ -1,10 +1,10 @@
 .main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  /* display: flex; */
   align-items: center;
-  padding: 6rem;
+  padding: 4rem;
   min-height: 100vh;
+  border: 4px solid black;
+  border-radius: 40px;
 }
 
 .description {
@@ -97,7 +97,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -200,6 +200,42 @@
     );
     z-index: 1;
   }
+}
+.title {
+  margin-bottom: 20px;
+}
+
+.box {
+  padding: 12px 0;
+}
+
+.red {
+  color: rgb(176, 50, 50);
+}
+
+/* 添加到您的全局樣式表中 */
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.table th,
+.table td {
+  border: 2px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+.upload {
+  cursor: pointer;
+  margin-right: 8px;
+  border: 2px solid black;
+  color: white;
+  background-color: orange;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
 }
 
 /* Tablet and Smaller Desktop */
