@@ -2,7 +2,7 @@
 const path = require("path");
 
 const nextConfig = {
-  assetPrefix: 'https://fanzaibb.github.io/goods-comparing',
+  output: 'export',
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
