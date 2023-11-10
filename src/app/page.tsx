@@ -29,10 +29,10 @@ interface Item {
   cost: string;
   price: string;
   marketPrice: string;
-  newName: string;
-  newCost: string;
-  newPrice: string;
-  newMarketPrice: string;
+  newName?: string;
+  newCost?: string;
+  newPrice?: string;
+  newMarketPrice?: string;
 }
 
 export default function Home() {
@@ -45,11 +45,12 @@ export default function Home() {
 
     // 假设你的工作表名为 "Sheet1"
     const worksheet = workbook.Sheets[workbook.SheetNames[0]];
-    const jsonData = XLSX.utils.sheet_to_json(worksheet);
+    const jsonData: ExcelRow[] = XLSX.utils.sheet_to_json(
+      worksheet
+    ) as ExcelRow[];
 
-    // 假设你要渲染的列名为 "Name" 和 "Value"
     setItems(
-      jsonData.map((row: ExcelRow) => ({
+      jsonData.map((row) => ({
         id: row["商品編號"],
         name: row["商品名稱"],
         cost: row["進價"],
@@ -65,13 +66,12 @@ export default function Home() {
 
     // 假设你的工作表名为 "Sheet1"
     const worksheet = workbook.Sheets[workbook.SheetNames[0]];
-    const jsonData = XLSX.utils.sheet_to_json(worksheet);
+    const jsonData: ExcelRow[] = XLSX.utils.sheet_to_json(
+      worksheet
+    ) as ExcelRow[];
 
     setItems((prevItems) => {
       const updatedItems = prevItems.map((item) => {
-        if (item.id == jsonData[1]["商品編號"]) {
-          console.log(item.id, jsonData[1]["商品編號"]);
-        }
         const row = jsonData.find(
           (row: any) => String(row["商品編號"]) === item.id
         );
