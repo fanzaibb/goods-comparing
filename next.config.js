@@ -3,6 +3,7 @@ const path = require("path");
 
 const nextConfig = {
   basePath: '/goods-comparing',
+  assetPrefix:'/goods-comparing/',
   output: 'export',
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
